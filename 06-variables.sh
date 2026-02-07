@@ -6,6 +6,8 @@
 
 start_time=$(date +%s)
 
+echo "Script executed at :$start_time"
+
 sleep 10
 
 end_time=$(date +%s)
