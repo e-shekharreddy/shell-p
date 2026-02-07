@@ -10,5 +10,5 @@ echo "Sum of the numbers: $sum"
 
 Fruits=("apple" "banana" "mango" "orange")
 
-echo "fruits are : $Fruits"
-echo "first fruit is :$(Fruits(0))"
+echo "fruits are : ${Fruits[@]}"
+echo "first fruit is :${Fruits[0]}"
