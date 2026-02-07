@@ -14,4 +14,4 @@ end_time=$(date +%s)
 
 Total_time=$(($end_time - $start_time))
 
-echo "Script executed $Total_time seconds"
+echo "Script executed in : $Total_time seconds"
