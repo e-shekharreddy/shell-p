@@ -6,6 +6,7 @@ read USER_NAME
 echo "User name is $USER_NAME"
 
 echo "please enter password::"
-read -e PASSWORD # -e is for to hide the password 
+read -s PASSWORD # -s is for to hide the password while entering the password
 
-read "password is $PASSWORD" #to see what password we enter
+
+echo "password is $PASSWORD" #to see what password we enter
