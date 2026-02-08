@@ -7,10 +7,10 @@ NUMBER=$1
 # -eq = equal
 # -ne = not equal
 
-if [$NUMBER - gt 143]
+if [$NUMBER - gt 143]; then
 echo "given number greater than 143"
-# elif [$NUMBER -lt 143]
-# echo "given number less than 143"
-else [$NUMBER -eq 143]
+elif [$NUMBER -lt 143]; then
+echo "given number less than 143"
+else [$NUMBER -eq 143]; then
 echo "given number equals to 143"
 fi
