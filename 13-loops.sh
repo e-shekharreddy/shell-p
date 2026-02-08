@@ -1,5 +1,6 @@
 #!/bin/bash
 
-do -i (1...100)
+do 
+echo -i "(1...100)"
+
 done
- 
