@@ -8,13 +8,9 @@ NUMBER=$1
 # -ne = not equal
 
 if [$NUMBER - gt 143]; then
-echo "i got it"
-else
-echo "sorry"
+echo "given number greater than 143"
+elif [$NUMBER -lt 143]; then
+echo "given number less than 143"
+else 
+echo "given number equals to 143"
 fi
-# echo "given number greater than 143"
-# elif [$NUMBER -lt 143]; then
-# echo "given number less than 143"
-# else [$NUMBER -eq 143]; then
-# echo "given number equals to 143"
-# fi
