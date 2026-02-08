@@ -1,7 +1,8 @@
 #!/bin/bash
-for
+
+for i in {1....100}
 
 do 
-    echo -i "(1...100)"
+    echo $i
 
 done
