@@ -19,12 +19,8 @@ VALIDATE(){
         echo "$2... SUCCESS" | tee -a $LOGS_FILE
     fi
 }
-
-dnf install nginx  -y &>> $LOGS_FILE
-VALIDATE $? "Installing Nginx" # here VALIDATE $1 $2 format
-
-dnf install mysql -y &>> $LOGS_FILE
-VALIDATE $? "Installing MySql" # here VALIDATE $1 $2 format
-
-dnf install nodejs -y &>> $LOGS_FILE
-VALIDATE $? "Installing NodeJS" # here VALIDATE $1 $2 format
+for package $@ #sudo sh <file name> package names like nginx mysql nodejs
+do 
+    dnf install $package -y &>> $LOGS_FILE
+    VALIDATE $? "$package installation" # here VALIDATE $1 $2 format
+done
