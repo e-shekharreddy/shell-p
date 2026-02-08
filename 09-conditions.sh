@@ -7,7 +7,7 @@ NUMBER=$1
 # -eq = equal
 # -ne = not equal
 
-if [ $NUMBER - gt 143 ]; then
+if [ $NUMBER -gt 143 ]; then
     echo "given number: $NUMBER greater than 143"
 elif [ $NUMBER -eq 143 ]; then
     echo "given number: $NUMBER  equals to 143"
