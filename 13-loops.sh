@@ -1,6 +1,7 @@
 #!/bin/bash
+for
 
 do 
-echo -i "(1...100)"
+    echo -i "(1...100)"
 
 done
