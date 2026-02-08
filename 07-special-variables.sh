@@ -7,6 +7,8 @@ echo "present directory: $PWD"
 echo "Who is runnung: $USER"
 echo "Home directory of current user: $HOME"
 echo "PID of the script: $$"
+echo "Exit status of privious command: $?"
+
 
 sleep 100 & # here & is used to run the process background
 
