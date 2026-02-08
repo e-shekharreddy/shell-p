@@ -1,3 +1,5 @@
 #!/bin/bash
 
-tru
+do -i (1...100)
+done
+ 
