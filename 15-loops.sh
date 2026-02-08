@@ -22,7 +22,7 @@ VALIDATE(){
 for package in $@ #sudo sh <file name> package names like nginx mysql nodejs
 do 
         dnf list installed $package &>> $LOGS_FILE
-    if [ $? -ne 0]; then 
+    if [ $? -ne 0 ]; then 
         echo "$package not installed, installing now"
         dnf install $package -y &>> $LOGS_FILE
          VALIDATE $? "$package installation" # here VALIDATE $1 $2 format
