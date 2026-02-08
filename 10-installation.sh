@@ -7,5 +7,4 @@ if
 
 echo "installing nginx"
 
-dnf install nginx -y
-
+dnf install nginx -y 
