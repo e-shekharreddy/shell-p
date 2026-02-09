@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e #this is used for checking error, if find it will exit
-
+trap 'echo "There is an error in $LINENO, Command: $BASH_COMMAND" ' ERR
 #!/bin/bash
 
 USERID=$(id -u)
@@ -21,21 +21,13 @@ fi
 
 mkdir -p $LOGS_FOLDER
 
-VALIDATE(){
-    if [ $1 -ne 0 ]; then
-        echo -e "$2... $R FAILURE $N " | tee -a $LOGS_FILE
-        exit 1
-    else
-        echo -e "$2... $G SUCCESS $N " | tee -a $LOGS_FILE
-    fi
-}
+
 for package in $@ #sudo sh <file name> package names like nginx mysql nodejs
 do 
         dnf list installed $package &>> $LOGS_FILE
     if [ $? -ne 0 ]; then 
         echo -e "$package not installed, $B installing now $N "
         dnf install $package -y &>> $LOGS_FILE
-          VALIDATE $? "$package installation" # here VALIDATE $1 $2 format
     else
         echo -e "$package already installed... $Y skipping $N"
     fi
