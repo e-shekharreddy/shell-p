@@ -25,7 +25,7 @@ do
     rm -f $filepath
     echo "Deleted file: $filepath"
     
-done <<< $FILE_TO_DELETE    # here <<< for to read and get the varaible 
+done <<< $FILES_TO_DELETE    # here <<< for to read and get the varaible 
                             # if we use > to get the output
 
 
