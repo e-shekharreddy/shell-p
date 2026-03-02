@@ -1,6 +1,6 @@
 #!/bin/bash
 
-country=may_be
+country=
 
 echo "I am in :$country"
 echo "PID of SCRIPT-2: $$"
