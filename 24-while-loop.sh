@@ -1,9 +1,11 @@
 #!/bin/bash
 
 count=1
-while [ $count -le 6 ]
+while [ $count -lt 6 ]
 do
     echo "Count is $count"
 
+    sleep 1 
+    #increment count
     ((count++))
 done 
