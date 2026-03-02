@@ -22,6 +22,6 @@ USAGE(){
     exit 1
 } 
 
-if [ $# -lt 0 ]; then
-    $USAGE
+if [ $# -lt 2 ]; then
+    USAGE
 fi
