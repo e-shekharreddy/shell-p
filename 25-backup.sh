@@ -12,7 +12,7 @@ N="\e[0m"
 
 SOURCE_DIR=$1
 DEST_DIR=$2
-DAYS=${3: -14} #14 days default value if user does not provide 
+DAYS=${ 3: -14 } #14 days default value if user does not provide 
 
 if [ $USERID -ne 0 ]; then
     echo -e "$R Please run this script with root user access $N"
