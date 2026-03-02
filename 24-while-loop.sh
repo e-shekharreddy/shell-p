@@ -15,4 +15,4 @@ do
     #process each line 
     echo "$line"
 
-done < 23-delete_old_logs.sh  #which fileto read
+done < 23-delete-old-logs.sh  #which fileto read
