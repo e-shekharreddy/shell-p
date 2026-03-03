@@ -8,7 +8,7 @@ Y="\e[33m"
 B="\e[34m"
 N="\e[0m"
 MESSAGE=""
-SERVER_IP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
+IP_ADDRESS=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
 
 log(){
     echo -e "$(date "+%Y-%m-%d %H:%M:%S") | $1" | tee -a $LOGS_FILE
@@ -28,4 +28,4 @@ do
 done <<< $DISK_USAGE
 echo -e "$MESSAGE"
 
-sh mail.sh "kanna143as@gmail.com" "High disk usage on $SERVER_IP" "$MESSAGE" "HIGH DISK USAGE" "$IP_ADDRESS" "DevOps Team"
+sh mail.sh "kanna143as@gmail.com" "High disk usage on $IP_ADDRESS" "$MESSAGE" "HIGH DISK USAGE" "$IP_ADDRESS" "DevOps Team"
