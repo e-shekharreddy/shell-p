@@ -1,0 +1,29 @@
+#!/bin/bash
+
+
+
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+B="\e[34m"
+N="\e[0m"
+MESSAGE=""
+
+
+log(){
+    echo -e "$(date "+%Y-%m-%d %H:%M:%S") | $1" | tee -a $LOGS_FILE
+}
+DISK_USAGE=$(df -hT | grep -v Filesystem)
+USAGE_THRESHOLD=3
+
+while IFS= read -r line
+do 
+    USAGE=$(echo $line | awk '{print $6}' | cut -d "%" -f1)
+    PARTITION=$(echo $line | awk '{print $7'})
+
+    if [ "$DISK_USAGE" -ge "$USAGE_THERSHOLD" ]; then
+        MESSAGE+="High DIsk usage on $PARTITION:$USAGE% \n"
+    fi 
+
+done <<< $DISK_USAGE
+echo -e "$MESSAGE"
